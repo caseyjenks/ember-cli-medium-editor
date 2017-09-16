@@ -70,7 +70,7 @@ export default Ember.Component.extend({
   },
 
   keyDown(event) {
-    this.sendAction('onKeyDown');
+    this.sendAction('onKeyDown', event);
     if (!event.metaKey) {
       run.debounce(this, 'setUserFinishedTyping', 2000);
       return this.set('isUserTyping', true);
